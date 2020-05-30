@@ -28,7 +28,7 @@ function buatNIKRandom(){
     tgl = (Math.floor(Math.random() * (31-1)) + 1).toString();
     bulan = (Math.floor(Math.random() * (12-1)) + 1).toString()
     tahun = (Math.floor(Math.random() * (98-60)) + 60).toString()
-    nourut = "000" + (Math.floor(Math.random() * (9-1)) + 1).toString()
+    nourut = (Math.floor(Math.random() * (500-1)) + 1).toString()
 }
 
 function nikClean(){
@@ -38,6 +38,12 @@ function nikClean(){
     if(bulan.length == 1){
         bulan = "0" + bulan;
     }
+    if(nourut.length == 1){
+        nourut = "00" + nourut;
+    }else if(nourut.length== 2){
+        nourut = "0"+ nourut;
+    }
+
 
     return provinsi + kabupatenkota + kecamatan + tgl + bulan + tahun + nourut;
 }
