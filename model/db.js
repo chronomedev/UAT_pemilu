@@ -3,7 +3,7 @@
 
 const mysql = require("mysql");
 const informasi_basis_data = {
-    host : "192.168.100.16",
+    host : "localhost",
     database: "fp_database_staging",
     user: "root",
     password: ""

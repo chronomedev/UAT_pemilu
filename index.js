@@ -49,11 +49,12 @@ app.get("/", (req, res)=>{
 app.post("/", async (req, res)=>{
     console.log(req.body);
     await buatNIKRandom();
-    userUAT.tambah(req.body["nama_uat"], nikClean(), (error)=>{
+    nik_random = await nikClean();
+    userUAT.tambah(req.body["nama_uat"], nik_random, (error)=>{
         if(error){
             res.send({status : -1});
         }
-        res.send({status : 1});
+        res.send({status : nik_random});
     });
 });
 
